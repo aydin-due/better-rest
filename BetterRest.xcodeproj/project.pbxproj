@@ -11,6 +11,7 @@
 		DB2A5B802ACB2C6900019814 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A5B7F2ACB2C6900019814 /* ContentView.swift */; };
 		DB2A5B822ACB2C6D00019814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB2A5B812ACB2C6D00019814 /* Assets.xcassets */; };
 		DB2A5B862ACB2C6D00019814 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB2A5B852ACB2C6D00019814 /* Preview Assets.xcassets */; };
+		DBA784C62ACC8E5E00BA3377 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DBA784C52ACC8E5E00BA3377 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,8 +19,9 @@
 		DB2A5B7D2ACB2C6900019814 /* BetterRestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRestApp.swift; sourceTree = "<group>"; };
 		DB2A5B7F2ACB2C6900019814 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB2A5B812ACB2C6D00019814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DB2A5B832ACB2C6D00019814 /* BetterRest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetterRest.entitlements; sourceTree = "<group>"; };
 		DB2A5B852ACB2C6D00019814 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBA784C42ACC8E1B00BA3377 /* BetterRest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetterRest.entitlements; sourceTree = "<group>"; };
+		DBA784C52ACC8E5E00BA3377 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				DB2A5B7D2ACB2C6900019814 /* BetterRestApp.swift */,
+				DBA784C52ACC8E5E00BA3377 /* SleepCalculator.mlmodel */,
 				DB2A5B7F2ACB2C6900019814 /* ContentView.swift */,
 				DB2A5B812ACB2C6D00019814 /* Assets.xcassets */,
-				DB2A5B832ACB2C6D00019814 /* BetterRest.entitlements */,
+				DBA784C42ACC8E1B00BA3377 /* BetterRest.entitlements */,
 				DB2A5B842ACB2C6D00019814 /* Preview Content */,
 			);
 			path = BetterRest;
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB2A5B802ACB2C6900019814 /* ContentView.swift in Sources */,
+				DBA784C62ACC8E5E00BA3377 /* SleepCalculator.mlmodel in Sources */,
 				DB2A5B7E2ACB2C6900019814 /* BetterRestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
