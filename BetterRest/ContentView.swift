@@ -25,7 +25,8 @@ struct ContentView: View {
         return Calendar.current.date(from: components) ?? Date.now
     }
     
-    func calculateBedtime(){
+    func calculateBedtime() -> String {
+        print("a")
         do {
             let config = MLModelConfiguration()
             let model = try SleepCalculator(configuration: config)
@@ -36,17 +37,28 @@ struct ContentView: View {
             let sleepTime = wakeUpTime - prediction.actualSleep
             alertTitle = "your ideal bedtime is..."
             alertText = sleepTime.formatted(date: .omitted, time: .shortened)
+            return sleepTime.formatted(date: .omitted, time: .shortened)
+            
             
         } catch {
             alertTitle = "error"
             alertText = "something went wrong ://"
+            return "something went wrong ://"
         }
-        showingAlert = true
     }
     
     var body: some View {
         NavigationView{
             Form {
+                /*
+                Section{
+                    DatePicker("please enter a time", selection: $wakeUpTime, in: Date.now..., displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                }
+            header: {
+                Text("when do u want to wake up?")
+            }
+                 */
                 VStack(alignment: .leading) {
                     Text("when do u want to wake up?")
                         .font(.headline)
@@ -59,17 +71,36 @@ struct ContentView: View {
                     Stepper("\(sleepAmount.formatted()) hrs", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
                 VStack(alignment: .leading) {
+                    /*
                     Text("daily coffee intake")
                         .font(.headline)
                     Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
+                     */
+                    Picker("daily coffee intake", selection: $coffeeAmount){
+                        ForEach(1...20, id: \.self) { number in
+                            Text(number == 1 ? "1 cup": "\(number) cups")
+                        }
+                    }
+                     
                 }
                 /*
                  Text(Date.now, format: .dateTime.hour().minute())
                  Text(Date.now, format: .dateTime.day().month().year())
                  Text(Date.now.formatted(date: .long, time: .shortened))
                  */
+                Section {
+                    Text(calculateBedtime())
+                        .font(.title)
+                        .padding(20)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                } header: {
+                    Text("Recommended sleep time")
+                }
+                
             }
             .navigationTitle("BetterRest")
+            /*
             .toolbar {
                 Button("calculate", action: calculateBedtime)
             }
@@ -78,6 +109,7 @@ struct ContentView: View {
             } message: {
                 Text(alertText)
             }
+             */
         }
     }
 }
